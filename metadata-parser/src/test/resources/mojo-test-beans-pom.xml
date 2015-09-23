@@ -1,143 +1,143 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<!-- Parent -->
-	<parent>
-		<groupId>org.jboss.shrinkwrap.descriptors</groupId>
-		<artifactId>shrinkwrap-descriptors-parent</artifactId>
-		<version>2.0.0-alpha-3-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+        <!-- Parent -->
+        <parent>
+                <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
+                <artifactId>shrinkwrap-descriptors-parent</artifactId>
+                <version>2.0.0-alpha-3-SNAPSHOT</version>
+                <relativePath>../pom.xml</relativePath>
+        </parent>
 
-	<!-- Model Version -->
-	<modelVersion>4.0.0</modelVersion>
+        <!-- Model Version -->
+        <modelVersion>4.0.0</modelVersion>
 
-	<!-- Artifact Configuration -->
-	<artifactId>shrinkwrap-descriptors-metadata-parser-test</artifactId>
-	<name>ShrinkWrap Descriptors Metadata Parser test</name>
-	<description>XSD and DTD parser for the ShrinkWrap Descriptors</description>
-	<packaging>maven-plugin</packaging>
+        <!-- Artifact Configuration -->
+        <artifactId>shrinkwrap-descriptors-metadata-parser-test</artifactId>
+        <name>ShrinkWrap Descriptors Metadata Parser test</name>
+        <description>XSD and DTD parser for the ShrinkWrap Descriptors</description>
+        <packaging>maven-plugin</packaging>
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>shrinkwrap-descriptors-metadata-parser</artifactId>
-				<configuration>
-					<verbose>false</verbose>
-					<path>
-						<pathToApi>target/mojo-test/test-api/src/main/java</pathToApi>
-						<pathToImpl>target/mojo-test/test-impl/src/main/java</pathToImpl>
-						<pathToTest>target/mojo-test/test-test/src/main/java</pathToTest>
-					</path>
-					<descriptors>
-						<descriptor>
-							<pathToXsd>src/test/resources/xsd/testcases.xsd</pathToXsd>
-							<nameSpace>javaee</nameSpace>
-							<packageApi>org.jboss.shrinkwrap.descriptor.api.beans10</packageApi>
-							<packageImpl>org.jboss.shrinkwrap.descriptor.impl.beans10</packageImpl>
-							<descriptorName>BeansDescriptor</descriptorName>
-							<elementName>beans</elementName>
-							<elementType>javaee:beans</elementType>
-							<namespaces>
-								<property><name>xmlns</name><value>http://java.sun.com/xml/ns/javaee</value></property>
-								<property><name>xmlns:xsi</name><value>http://www.w3.org/2001/XMLSchema-instance</value></property>
-								<property><name>xsi:schemaLocation</name><value>http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd</value></property>
-							</namespaces>
-						</descriptor>
-					</descriptors>
-				</configuration>
-				<goals>
-					<goal>parse</goal>
-				</goals>
-			</plugin>
-		</plugins>
-	</build>
+        <build>
+                <plugins>
+                        <plugin>
+                                <artifactId>shrinkwrap-descriptors-metadata-parser</artifactId>
+                                <configuration>
+                                        <verbose>false</verbose>
+                                        <path>
+                                                <pathToApi>target/mojo-test/test-api/src/main/java</pathToApi>
+                                                <pathToImpl>target/mojo-test/test-impl/src/main/java</pathToImpl>
+                                                <pathToTest>target/mojo-test/test-test/src/main/java</pathToTest>
+                                        </path>
+                                        <descriptors>
+                                                <descriptor>
+                                                        <pathToXsd>src/test/resources/xsd/testcases.xsd</pathToXsd>
+                                                        <nameSpace>javaee</nameSpace>
+                                                        <packageApi>org.jboss.shrinkwrap.descriptor.api.beans10</packageApi>
+                                                        <packageImpl>org.jboss.shrinkwrap.descriptor.impl.beans10</packageImpl>
+                                                        <descriptorName>BeansDescriptor</descriptorName>
+                                                        <elementName>beans</elementName>
+                                                        <elementType>javaee:beans</elementType>
+                                                        <namespaces>
+                                                                <property><name>xmlns</name><value>http://java.sun.com/xml/ns/javaee</value></property>
+                                                                <property><name>xmlns:xsi</name><value>http://www.w3.org/2001/XMLSchema-instance</value></property>
+                                                                <property><name>xsi:schemaLocation</name><value>http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd</value></property>
+                                                        </namespaces>
+                                                </descriptor>
+                                        </descriptors>
+                                </configuration>
+                                <goals>
+                                        <goal>parse</goal>
+                                </goals>
+                        </plugin>
+                </plugins>
+        </build>
 
 
-	<dependencies>
+        <dependencies>
 
-		<dependency>
-			<groupId>org.jboss.shrinkwrap.descriptors</groupId>
-			<artifactId>shrinkwrap-descriptors-api-base</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+                <dependency>
+                        <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
+                        <artifactId>shrinkwrap-descriptors-api-base</artifactId>
+                        <version>${project.version}</version>
+                </dependency>
 
-		<dependency>
-			<groupId>org.jboss.shrinkwrap.descriptors</groupId>
-			<artifactId>shrinkwrap-descriptors-impl-base</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+                <dependency>
+                        <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
+                        <artifactId>shrinkwrap-descriptors-impl-base</artifactId>
+                        <version>${project.version}</version>
+                </dependency>
 
-		<dependency>
-			<groupId>org.jboss.shrinkwrap.descriptors</groupId>
-			<artifactId>shrinkwrap-descriptors-test-util</artifactId>
-			<version>${project.version}</version>
-			<scope>test</scope>
-		</dependency>
+                <dependency>
+                        <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
+                        <artifactId>shrinkwrap-descriptors-test-util</artifactId>
+                        <version>${project.version}</version>
+                        <scope>test</scope>
+                </dependency>
 
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.1</version>
-		</dependency>
+                <dependency>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-lang3</artifactId>
+                        <version>3.1</version>
+                </dependency>
 
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1</version>
-		</dependency>
+                <dependency>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                        <version>1.1</version>
+                </dependency>
 
-		<dependency>
-			<groupId>org.apache.maven</groupId>
-			<artifactId>maven-plugin-api</artifactId>
-			<version>3.0.3</version>
-		</dependency>
+                <dependency>
+                        <groupId>org.apache.maven</groupId>
+                        <artifactId>maven-plugin-api</artifactId>
+                        <version>3.0.3</version>
+                </dependency>
 
-		<dependency>
-			<groupId>net.sf.saxon</groupId>
-			<artifactId>saxon</artifactId>
-			<version>8.7</version>
-		</dependency>
+                <dependency>
+                        <groupId>net.sf.saxon</groupId>
+                        <artifactId>saxon</artifactId>
+                        <version>8.7</version>
+                </dependency>
 
-		<dependency>
-			<groupId>net.sf.saxon</groupId>
-			<artifactId>saxon-dom</artifactId>
-			<version>8.7</version>
-		</dependency>
+                <dependency>
+                        <groupId>net.sf.saxon</groupId>
+                        <artifactId>saxon-dom</artifactId>
+                        <version>8.7</version>
+                </dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
+                <dependency>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                        <scope>test</scope>
+                </dependency>
 
-		<dependency>
-			<groupId>com.sun.codemodel</groupId>
-			<artifactId>codemodel</artifactId>
-			<version>2.4</version>
-		</dependency>
+                <dependency>
+                        <groupId>com.sun.codemodel</groupId>
+                        <artifactId>codemodel</artifactId>
+                        <version>2.4</version>
+                </dependency>
 
-		<dependency>
-			<groupId>com.sun.xml.dtd-parser</groupId>
-			<artifactId>dtd-parser</artifactId>
-			<version>1.1</version>
-		</dependency>
+                <dependency>
+                        <groupId>com.sun.xml.dtd-parser</groupId>
+                        <artifactId>dtd-parser</artifactId>
+                        <version>1.1</version>
+                </dependency>
 
-		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>1.6.1</version>
-			<scope>test</scope>
-		</dependency>
+                <dependency>
+                        <groupId>dom4j</groupId>
+                        <artifactId>dom4j</artifactId>
+                        <version>1.6.1</version>
+                        <scope>test</scope>
+                </dependency>
 
-		<dependency>
-			<groupId>org.apache.maven.plugin-testing</groupId>
-			<artifactId>maven-plugin-testing-harness</artifactId>
-			<version>2.0-alpha-1</version>
-			<scope>test</scope>
-		</dependency>
+                <dependency>
+                        <groupId>org.apache.maven.plugin-testing</groupId>
+                        <artifactId>maven-plugin-testing-harness</artifactId>
+                        <version>2.0-alpha-1</version>
+                        <scope>test</scope>
+                </dependency>
 
-	</dependencies>
+        </dependencies>
 
 </project>

@@ -13,16 +13,16 @@
 
   <!-- Model Information -->
   <modelVersion>4.0.0</modelVersion>
-  
+
     <!-- Artifact Information  -->
-  <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+  <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
   <artifactId>shrinkwrap-descriptors-parent</artifactId>
   <version>1.2.0-SD92-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>ShrinkWrap Descriptors Aggregator</name>
   <url>http://www.jboss.org</url>
   <description>ShrinkWrap Descriptors Aggregator</description>
-  
+
     <!-- Properties -->
   <properties>
 
@@ -30,14 +30,14 @@
     <version.junit_junit>4.8.1</version.junit_junit>
 
   </properties>
-  
+
   <!-- SCM -->
   <scm>
     <connection>scm:git:git://github.com/shrinkwrap/descriptors.git</connection>
     <developerConnection>scm:git:git@github.com:shrinkwrap/descriptors.git</developerConnection>
     <url>http://github.com/shrinkwrap/descriptors</url>
   </scm>
-  
+
   <!-- Issues -->
   <issueManagement>
     <system>jira</system>
@@ -51,7 +51,7 @@
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
-  
+
   <!-- Aggregate Modules -->
   <modules>
     <module>metadata-parser</module>
@@ -61,16 +61,16 @@
   <!-- Plugin Configuration -->
   <build>
     <plugins>
-      
+
       <!-- Release -->
-      <plugin> 
+      <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <version>2.0</version>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
         </configuration>
       </plugin>
-      
+
       <!-- Compiler -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -119,7 +119,7 @@
           <rules>
             <requireMavenVersion>
               <version>[2.2.0,)</version>
-              <!-- Must be more that 2.2 to support Assembly "includeModuleDirectory": 
+              <!-- Must be more that 2.2 to support Assembly "includeModuleDirectory":
                 http://maven.apache.org/plugins/maven-assembly-plugin/assembly.html -->
             </requireMavenVersion>
             <requireJavaVersion>
@@ -136,7 +136,7 @@
           </rules>
         </configuration>
       </plugin>
-      
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
@@ -174,11 +174,11 @@
           </execution>
         </executions>
       </plugin>
-      
+
     </plugins>
 
   </build>
-  
+
   <!-- Dependency Management -->
   <dependencyManagement>
     <dependencies>
@@ -192,7 +192,7 @@
 
     </dependencies>
   </dependencyManagement>
-  
+
   <repositories>
     <repository>
       <id>jboss-public-repository</id>
@@ -223,6 +223,6 @@
         <updatePolicy>never</updatePolicy>
       </snapshots>
     </pluginRepository>
-  </pluginRepositories> 
+  </pluginRepositories>
 
 </project>

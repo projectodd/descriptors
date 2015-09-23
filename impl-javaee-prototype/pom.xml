@@ -3,9 +3,9 @@
 
   <!-- Parent -->
   <parent>
-    <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+    <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
     <artifactId>shrinkwrap-descriptors-parent</artifactId>
-    <version>2.0.0-alpha-8-SNAPSHOT</version>
+    <version>2.0.0-alpha-7a-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -20,17 +20,17 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+      <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
       <artifactId>shrinkwrap-descriptors-api-javaee-prototype</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+      <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
       <artifactId>shrinkwrap-descriptors-impl-base</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+      <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
       <artifactId>shrinkwrap-descriptors-impl-base</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
@@ -45,19 +45,19 @@
 
   </dependencies>
 
-	<build>
-		<plugins>
-			<!-- Surefire -->
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<!-- Run in Java5; be build with a JDK6 compiler so ensure we don't 
-						use any JDK6 libs -->
-					<jvm>${env.JAVA5_HOME}/bin/java</jvm>
+        <build>
+                <plugins>
+                        <!-- Surefire -->
+                        <plugin>
+                                <artifactId>maven-surefire-plugin</artifactId>
+                                <configuration>
+                                        <!-- Run in Java5; be build with a JDK6 compiler so ensure we don't
+                                                use any JDK6 libs -->
+                                        <jvm>${env.JAVA5_HOME}/bin/java</jvm>
           <!-- Speeeeeeed -->
           <forkMode>once</forkMode>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                                </configuration>
+                        </plugin>
+                </plugins>
+        </build>
 </project>

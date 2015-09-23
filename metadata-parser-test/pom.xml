@@ -3,9 +3,9 @@
 
     <!-- Parent -->
     <parent>
-        <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+        <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
         <artifactId>shrinkwrap-descriptors-parent</artifactId>
-        <version>2.0.0-alpha-8-SNAPSHOT</version>
+        <version>2.0.0-alpha-7a-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -50,7 +50,7 @@
             </plugin>
 
             <plugin>
-                <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+                <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
                 <artifactId>shrinkwrap-descriptors-metadata-parser</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -165,7 +165,7 @@
                             <pluginExecutions>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+                                        <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
                                         <artifactId>shrinkwrap-descriptors-metadata-parser</artifactId>
                                         <versionRange>[1.0.0,)</versionRange>
                                         <goals>
@@ -200,27 +200,27 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
             <artifactId>shrinkwrap-descriptors-impl-javaee</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
             <artifactId>shrinkwrap-descriptors-impl-jboss</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
             <artifactId>shrinkwrap-descriptors-impl-base</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
             <artifactId>shrinkwrap-descriptors-impl-base</artifactId>
             <version>${project.version}</version>
             <type>test-jar</type>
@@ -228,13 +228,13 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
             <artifactId>shrinkwrap-descriptors-metadata-parser</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+            <groupId>org.projectodd.shrinkwrap.descriptors</groupId>
             <artifactId>shrinkwrap-descriptors-test-util</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
