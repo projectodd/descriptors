@@ -60,7 +60,7 @@
         <module>api-jboss</module>
         <module>api-misc</module>
         <module>ant</module>
-        <module>bom</module>
+        <!--<module>bom</module>-->
         <module>build-resources</module>
         <module>depchain</module>
         <module>gen</module>
@@ -92,7 +92,46 @@
               <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
           </plugin>
-
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>1.5</version>
+          <executions>
+            <execution>
+              <id>sign-artifacts</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>sign</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.2.1</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.9.1</version>
+          <executions>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
             <!-- <plugin> -->
             <!--     <artifactId>maven-release-plugin</artifactId> -->
             <!--     <configuration> -->
@@ -150,44 +189,44 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                    <doclet>org.jboss.apiviz.APIviz</doclet>
-                    <docletArtifact>
-                        <groupId>org.jboss.apiviz</groupId>
-                        <artifactId>apiviz</artifactId>
-                        <version>1.3.2.GA</version>
-                    </docletArtifact>
-                    <useStandardDocletOptions>true</useStandardDocletOptions>
-                    <charset>UTF-8</charset>
-                    <encoding>UTF-8</encoding>
-                    <docencoding>UTF-8</docencoding>
-                    <breakiterator>true</breakiterator>
-                    <version>true</version>
-                    <author>true</author>
-                    <keywords>true</keywords>
-                    <stylesheetfile>${basedir}/javadoc/javadoc.css</stylesheetfile>
-                    <javadocDirectory>${basedir}/javadoc</javadocDirectory>
-                    <docfilessubdirs>true</docfilessubdirs>
-                    <detectLinks>true</detectLinks>
-                    <excludePackageNames>
-                        org.jboss.shrinkwrap.descriptor.api.spec.*:org.jboss.shrinkwrap.descriptor.impl.*:org.jboss.shrinkwrap.descriptor.example:org.jboss.shrinkwrap.descriptor.spi
-                    </excludePackageNames>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>aggregate</id>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                        <phase>site</phase>
-                        <configuration>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!-- <plugin> -->
+            <!--     <groupId>org.apache.maven.plugins</groupId> -->
+            <!--     <artifactId>maven-javadoc-plugin</artifactId> -->
+            <!--     <configuration> -->
+            <!--         <doclet>org.jboss.apiviz.APIviz</doclet> -->
+            <!--         <docletArtifact> -->
+            <!--             <groupId>org.jboss.apiviz</groupId> -->
+            <!--             <artifactId>apiviz</artifactId> -->
+            <!--             <version>1.3.2.GA</version> -->
+            <!--         </docletArtifact> -->
+            <!--         <useStandardDocletOptions>true</useStandardDocletOptions> -->
+            <!--         <charset>UTF-8</charset> -->
+            <!--         <encoding>UTF-8</encoding> -->
+            <!--         <docencoding>UTF-8</docencoding> -->
+            <!--         <breakiterator>true</breakiterator> -->
+            <!--         <version>true</version> -->
+            <!--         <author>true</author> -->
+            <!--         <keywords>true</keywords> -->
+            <!--         <stylesheetfile>${basedir}/javadoc/javadoc.css</stylesheetfile> -->
+            <!--         <javadocDirectory>${basedir}/javadoc</javadocDirectory> -->
+            <!--         <docfilessubdirs>true</docfilessubdirs> -->
+            <!--         <detectLinks>true</detectLinks> -->
+            <!--         <excludePackageNames> -->
+            <!--             org.jboss.shrinkwrap.descriptor.api.spec.*:org.jboss.shrinkwrap.descriptor.impl.*:org.jboss.shrinkwrap.descriptor.example:org.jboss.shrinkwrap.descriptor.spi -->
+            <!--         </excludePackageNames> -->
+            <!--     </configuration> -->
+            <!--     <executions> -->
+            <!--         <execution> -->
+            <!--             <id>aggregate</id> -->
+            <!--             <goals> -->
+            <!--                 <goal>aggregate</goal> -->
+            <!--             </goals> -->
+            <!--             <phase>site</phase> -->
+            <!--             <configuration> -->
+            <!--             </configuration> -->
+            <!--         </execution> -->
+            <!--     </executions> -->
+            <!-- </plugin> -->
 
         </plugins>
         <pluginManagement>
